@@ -9,6 +9,10 @@ app.use(express.static(path.join(__dirname, '/build/')));
 
 app.use(express.json());
 
+app.use(cors({
+  origin: '*'
+}));
+
 const server = app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}...`));
 
 const socket = require('socket.io');
